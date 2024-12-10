@@ -1,4 +1,12 @@
+# Beam files
+*.beam
+*.ez
+
+# Gleam build artefacts
+/build
+
 # Logs
+erl_crash.dump
 logs
 *.log
 npm-debug.log*
