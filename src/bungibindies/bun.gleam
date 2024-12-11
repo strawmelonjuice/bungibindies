@@ -187,43 +187,6 @@ pub fn file_url_to_path(url: String) -> String
 @external(javascript, "../bun_bun_utilities_ffi.ts", "CpathToFileURL")
 pub fn path_to_file_url(path: String) -> String
 
-/// # `Bun.gzipSync()`
-/// - Utilities
-/// 
-/// Compresses an array of bytes using gzip.
-/// 
-/// NOT IMPLEMENTED
-pub fn gzip_sync(_data: BitArray) -> BitArray {
-  panic as "Not implemented"
-}
-
-/// # `Bun.gunzipSync()`
-/// - Utilities
-/// 
-/// Decompresses an array of bytes using gzip.
-/// NOT IMPLEMENTED
-pub fn gunzip_sync(_data: BitArray) -> BitArray {
-  panic as "Not implemented"
-}
-
-/// # `Bun.deflateSync()`
-/// - Utilities
-/// 
-/// Compresses an array of bytes using deflate.
-/// NOT IMPLEMENTED
-pub fn deflate_sync(_data: BitArray) -> BitArray {
-  panic as "Not implemented"
-}
-
-/// # `Bun.inflateSync()`
-/// - Utilities
-/// 
-/// Decompresses an array of bytes using deflate.
-/// NOT IMPLEMENTED
-pub fn inflate_sync(_data: BitArray) -> BitArray {
-  panic as "Not implemented"
-}
-
 /// # `Bun.inspect()`
 /// - Utilities
 /// 
