@@ -76,6 +76,9 @@ with possibly the reason for skipping.
   - [ ] `Bun.exec()`
   - [ ] `Bun.execSync()`
   - [ ] `Bun.spawnSync()`
+- [ ] TCP
+  - [ ] `Bun.listen()`
+  - [ ] `Bun.connect()`
 - [ ] Transpiler
   - [ ] `New` returning a `Bun.Transpiler` in the form of a set of functions and interfaces.
 - [ ] Hashing
