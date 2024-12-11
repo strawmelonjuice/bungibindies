@@ -13,6 +13,7 @@ links = [{ title = "Bun APIs", href = "https://bun.sh/docs/runtime/bun-apis" }]
 # https://gleam.run/writing-gleam/gleam-toml/.
 
 target = "javascript"
+gleam = ">= 0.32.0"
 [javascript]
 typescript_declarations = true
 runtime = "bun"

@@ -1,8 +1,8 @@
 //// Gleam bindings to the Bun runtime API's.
 
+import gleam/javascript/array.{type Array}
 import gleam/javascript/map.{type Map}
 import gleam/javascript/promise.{type Promise}
-import gleam/javascript/array.{type Array}
 
 // 	Bun.version Bun.revision Bun.env Bun.main Bun.sleep() Bun.sleepSync() Bun.which() Bun.peek() Bun.openInEditor() Bun.deepEquals() Bun.escapeHTML() Bun.fileURLToPath() Bun.pathToFileURL() Bun.gzipSync() Bun.gunzipSync() Bun.deflateSync() Bun.inflateSync() Bun.inspect() Bun.nanoseconds() Bun.readableStreamTo*() Bun.resolveSync()
 
@@ -124,7 +124,10 @@ pub fn open_in_editor(path: String) -> Nil
 /// 
 /// Opens a file in the user's editor.
 @external(javascript, "../bun_bun_utilities_ffi.ts", "CopenInEditorWithOptions")
-pub fn open_in_editor_with_options(path: String, options: Map(String, String)) -> Nil
+pub fn open_in_editor_with_options(
+  path: String,
+  options: Map(String, String),
+) -> Nil
 
 /// # `Bun.deepEquals()`
 /// > Utilities
@@ -164,7 +167,11 @@ pub fn escape_html(value: a) -> String
 /// Get the column count of a string as it would be displayed in a terminal.
 /// Supports ANSI escape codes, emoji, and wide characters.
 @external(javascript, "../bun_bun_utilities_ffi.ts", "CstringWidth")
-pub fn string_width(value: String, count_ansi_escape_codes: Bool, ambiguous_is_narrow: Bool) -> Int
+pub fn string_width(
+  value: String,
+  count_ansi_escape_codes: Bool,
+  ambiguous_is_narrow: Bool,
+) -> Int
 
 /// # `Bun.fileURLToPath()`
 /// > Utilities
