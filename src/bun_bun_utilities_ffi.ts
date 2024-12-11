@@ -1,13 +1,5 @@
 import type { EditorOptions } from "bun";
-
-function bufferToArrayOfNumbers(buffer: Buffer): number[] {
-  if (buffer.length > 0) {
-    const data = new Array(buffer.length);
-    for (let i = 0; i < buffer.length; i = i + 1) data[i] = buffer[i];
-    return data;
-  }
-  return [];
-}
+import { bufferToArrayOfNumbers } from "./type_layers";
 
 export function Cversion(): string {
   return Bun.version;
@@ -41,7 +33,7 @@ export function Cwhich(cmd: string): string[] {
 
 export function CwhichWithOptions(
   cmd: string,
-  options: { PATH?: string; cwd?: string }
+  options: { PATH?: string; cwd?: string },
 ): string[] {
   const p = Bun.which(cmd, options);
   return p ? [p] : [];
@@ -64,7 +56,7 @@ export function CopenInEditor(file: string): void {
 
 export function CopenInEditorWithOptions(
   file: string,
-  options: EditorOptions
+  options: EditorOptions,
 ): void {
   Bun.openInEditor(file, options);
 }
@@ -77,14 +69,14 @@ export function CdeepEqualsStrict(a: unknown, b: unknown): boolean {
   return Bun.deepEquals(a, b, true);
 }
 
-export function CescapeHTML(s: any): string {
+export function CescapeHTML(s: string | number | boolean | object): string {
   return Bun.escapeHTML(s);
 }
 
 export function CstringWidth(
   s: string,
   countAnsiEscapeCodes: boolean,
-  ambiguousIsNarrow: boolean
+  ambiguousIsNarrow: boolean,
 ): number {
   return Bun.stringWidth(s, {
     countAnsiEscapeCodes,
@@ -100,8 +92,12 @@ export function CpathToFileURL(path: string): string {
   return Bun.pathToFileURL(path).toString();
 }
 
-export function Cinspect(a: any): string {
+export function Cinspect(a: unknown): string {
   return Bun.inspect(a);
+}
+
+export function Cnanoseconds(): number {
+  return Bun.nanoseconds();
 }
 
 export function CresolveSync(module: string, parent: string): string {

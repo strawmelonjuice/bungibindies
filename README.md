@@ -56,6 +56,10 @@ with possibly the reason for skipping.
   - [ ] HTTP client
     - [ ] `Bun.fetch()
 
+- [ ] Bundler
+
+  - [ ] `Bun.bundle()`
+
 - Workers
 
 - [ ] Binary data
@@ -78,7 +82,8 @@ with possibly the reason for skipping.
 
 - [ ] SQLite
 
-  - [ ] `New` returning a `Bun.Database` in the form of a set of functions and interfaces.
+  - [ ] `New` returning a `Bun.Database` in the
+        form of a set of functions and interfaces.
 
 - [ ] Globals
 
@@ -98,7 +103,8 @@ with possibly the reason for skipping.
 
 - [ ] Transpiler
 
-  - [ ] `New` returning a `Bun.Transpiler` in the form of a set of functions and interfaces.
+  - [ ] `New` returning a `Bun.Transpiler` in the form of
+        a set of functions and interfaces.
 
 - [ ] Hashing
 
@@ -155,3 +161,4 @@ or wait until I get to them :)
 - DNS: Not stable enough yet.
 - `import.meta`: Gleam modules are not accessible from Bun API's, maybe through source maps in the future.
 - Workers: Not stable enough yet.
+#### Workarounds
