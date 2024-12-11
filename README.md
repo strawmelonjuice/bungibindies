@@ -2,8 +2,8 @@
 
 Gleam bindings to the Bun runtime API's.
 
-[![Package Version](https://img.shields.io/hexpm/v/bun)](https://hex.pm/packages/bun)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/bun/)
+[![Package Version](https://img.shields.io/hexpm/v/bungibindies)](https://hex.pm/packages/bungibindies)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/bungibindies/)
 
 > WARNING:
 >
@@ -40,8 +40,7 @@ gleam test  # Run the tests
 ### Dependencies
 
 I try to not use anything else than Bun itself,
-but I do use `gleam/javascript` and `plinth` to use non-bun-specific JS stuff.
-I aim to remove `plinth` at some point.
+but I do use `gleam/javascript` to use non-bun-specific JavaScript stuff.
 
 ### Implementation
 
@@ -50,45 +49,69 @@ complete but checked, should be in the `skipped` section along
 with possibly the reason for skipping.
 
 - [ ] HTTP API's
+
   - [ ] HTTP server
     - [ ] `Bun.serve()`, `serve.fetch()` and alike
     - [ ] WebSocket server
   - [ ] HTTP client
     - [ ] `Bun.fetch()
-- [!] Workers
+
+- Workers
+
 - [ ] Binary data
+
   - [ ] Types
+
 - [ ] Streams
+
   - [ ] Stream types
+
 - [ ] File I/O
+
   - [ ] Reading (`Bun.file()`)
     - [ ] `Bun.stdin`
     - [ ] `Bun.stdout`
     - [ ] `Bun.stderr`
   - [ ] Writing (`Bun.write()`)
-- [!] import.meta
+
+- import.meta
+
 - [ ] SQLite
+
   - [ ] `New` returning a `Bun.Database` in the form of a set of functions and interfaces.
+
 - [ ] Globals
+
 - [ ] $ Shell -- if possible to implement
+
 - [ ] Child processes
+
   - [ ] `Bun.spawn()`
   - [ ] `Bun.exec()`
   - [ ] `Bun.execSync()`
   - [ ] `Bun.spawnSync()`
+
 - [ ] TCP
+
   - [ ] `Bun.listen()`
   - [ ] `Bun.connect()`
+
 - [ ] Transpiler
+
   - [ ] `New` returning a `Bun.Transpiler` in the form of a set of functions and interfaces.
+
 - [ ] Hashing
+
   - [ ] `Bun.password_hash()` and `Bun.password_verify()`
   - [ ] `Bun.hash()`
-- [!] Console
+
+- Console
+
 - [ ] FFI
 - [ ] HTMLRewriter
 - [ ] Testing
 - [x] Utils
+
   - [x] `Bun.version`
   - [x] `Bun.revision`
   - [x] `Bun.env`
@@ -104,16 +127,17 @@ with possibly the reason for skipping.
   - [x] `Bun.stringWidth()`
   - [x] `Bun.fileURLToPath()`
   - [x] `Bun.pathToFileURL()`
-  - [!] `Bun.gzipSync`
-  - [!] `Bun.gunzipSync`
-  - [!] `Bun.deflateSync`
-  - [!] `Bun.inflateSync`
+  - `Bun.gzipSync`
+  - `Bun.gunzipSync`
+  - `Bun.deflateSync`
+  - `Bun.inflateSync`
   - [x] `Bun.inspect()`
   - [x] `Bun.nanoseconds()`
-  - [!] `Bun.readableStreamTo*()`
+  - `Bun.readableStreamTo*()`
   - [x] `Bun.resolveSync()`
-  - [!] `serialize` & `deserialize` in `bun:jsc`
-- [!] DNS
+  - `serialize` & `deserialize` in `bun:jsc`
+
+- DNS
 
 #### Skipped
 
@@ -121,14 +145,13 @@ Some implementations were skipped for now. Here is a little list of what I skipp
 If you want to help, feel free to implement them and make a PR,
 or wait until I get to them :)
 
-- Utilities -> `Bun.gzipSync`
-- Utilities -> `Bun.gunzipSync`
-- Utilities -> `Bun.deflateSync`
-- Utilities -> `Bun.inflateSync`
-- Utilities -> `Bun.readableStreamTo*()`
-- Utilities -> `serialize` & `deserialize` in `bun:jsc`
+- Utilities -> `Bun.gzipSync`: Not sure how to implement this yet.
+- Utilities -> `Bun.gunzipSync`: Not sure how to implement this yet.
+- Utilities -> `Bun.deflateSync`: Not sure how to implement this yet.
+- Utilities -> `Bun.inflateSync`: Not sure how to implement this yet.
+- Utilities -> `Bun.readableStreamTo*()`: Not sure how to implement this.
+- Utilities -> `serialize` & `deserialize` in `bun:jsc`: Not sure how to implement this.
 - Console: Not sure how to implement this yet.
 - DNS: Not stable enough yet.
-- `import.meta`: Gleam modules are not accessible from Bun API's, maybe through source
-  maps in the future.
+- `import.meta`: Gleam modules are not accessible from Bun API's, maybe through source maps in the future.
 - Workers: Not stable enough yet.
