@@ -1,11 +1,12 @@
 {
-  "name": "bungibindies",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+	"name": "bungibindies",
+	"type": "module",
+	"devDependencies": {
+		"@types/bun": "latest",
+		"@types/node": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
 }
+
