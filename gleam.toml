@@ -1,5 +1,5 @@
 name = "bungibindies"
-version = "1.0.0"
+version = "0.0.1"
 
 # Fill out these fields if you intend to generate HTML documentation or publish
 # your project to the Hex package manager.
@@ -19,7 +19,6 @@ runtime = "bun"
 
 [dependencies]
 gleam_javascript = ">= 0.13.0 and < 1.0.0"
-plinth = ">= 0.5.5 and < 1.0.0"
 
 [dev-dependencies]
 gleeunit = ">= 1.0.0 and < 2.0.0"
