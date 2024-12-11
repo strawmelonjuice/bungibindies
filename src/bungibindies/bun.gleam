@@ -194,7 +194,7 @@ pub fn path_to_file_url(path: String) -> String
 /// 
 /// NOT IMPLEMENTED
 pub fn gzip_sync(_data: BitArray) -> BitArray {
-  todo
+  panic as "Not implemented"
 }
 
 /// # `Bun.gunzipSync()`
@@ -203,7 +203,7 @@ pub fn gzip_sync(_data: BitArray) -> BitArray {
 /// Decompresses an array of bytes using gzip.
 /// NOT IMPLEMENTED
 pub fn gunzip_sync(_data: BitArray) -> BitArray {
-  todo
+  panic as "Not implemented"
 }
 
 /// # `Bun.deflateSync()`
@@ -212,7 +212,7 @@ pub fn gunzip_sync(_data: BitArray) -> BitArray {
 /// Compresses an array of bytes using deflate.
 /// NOT IMPLEMENTED
 pub fn deflate_sync(_data: BitArray) -> BitArray {
-  todo
+  panic as "Not implemented"
 }
 
 /// # `Bun.inflateSync()`
@@ -221,7 +221,7 @@ pub fn deflate_sync(_data: BitArray) -> BitArray {
 /// Decompresses an array of bytes using deflate.
 /// NOT IMPLEMENTED
 pub fn inflate_sync(_data: BitArray) -> BitArray {
-  todo
+  panic as "Not implemented"
 }
 
 /// # `Bun.inspect()`
