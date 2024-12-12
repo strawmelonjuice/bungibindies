@@ -1,6 +1,6 @@
 //// A `BunFile` represents a lazily-loaded file; initializing it does not actually read the file from disk.
 
-import gleam/javascript/map.{type Map}
+import gleam/dynamic.{type Dynamic}
 import gleam/javascript/promise.{type Promise}
 
 /// A `BunFile` represents a lazily-loaded file; initializing it does not actually read the file from disk.
@@ -18,4 +18,4 @@ pub fn text(file: BunFile) -> Promise(String)
 ///
 /// Read the contents of a file as a JSON object.
 @external(javascript, "../../bun_bun_file_ffi.ts", "Mjson")
-pub fn json(file: BunFile) -> Promise(Map(String, String))
+pub fn json(file: BunFile) -> Promise(Dynamic)
