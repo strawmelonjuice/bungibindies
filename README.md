@@ -7,7 +7,8 @@ Gleam bindings to the Bun runtime API's.
 
 > WARNING:
 >
-> Please note, only the utils part is finished so far. I published it so that I could try it out though.
+> Please note, only the utilities part is finished so far.
+> I published it so that I could try it out though.
 
 ```sh
 gleam add bungibindies@1
@@ -73,6 +74,7 @@ with possibly the reason for skipping.
 - [ ] File I/O
 
   - [ ] Reading (`Bun.file()`)
+    - [x] `Bun.file()`, `Bun.text()`, `Bun.json()` ...
     - [ ] `Bun.stdin`
     - [ ] `Bun.stdout`
     - [ ] `Bun.stderr`
@@ -116,7 +118,7 @@ with possibly the reason for skipping.
 - [ ] FFI
 - [ ] HTMLRewriter
 - [ ] Testing
-- [x] Utils
+- [x] Utilities
 
   - [x] `Bun.version`
   - [x] `Bun.revision`
@@ -156,9 +158,12 @@ or wait until I get to them :)
 - Utilities -> `Bun.deflateSync`: Not sure how to implement this yet.
 - Utilities -> `Bun.inflateSync`: Not sure how to implement this yet.
 - Utilities -> `Bun.readableStreamTo*()`: Not sure how to implement this.
-- Utilities -> `serialize` & `deserialize` in `bun:jsc`: Not sure how to implement this.
+- Utilities -> `serialize` & `deserialize` in `bun:jsc`:
+  Not sure how to implement this.
 - Console: Not sure how to implement this yet.
 - DNS: Not stable enough yet.
-- `import.meta`: Gleam modules are not accessible from Bun API's, maybe through source maps in the future.
+- `import.meta`: Gleam modules are not accessible from Bun
+  API's, maybe through source maps in the future.
 - Workers: Not stable enough yet.
+
 #### Workarounds
