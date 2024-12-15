@@ -73,12 +73,13 @@ with possibly the reason for skipping.
 
 - [ ] File I/O
 
-  - [ ] Reading (`Bun.file()`)
+  - [x] `Bunfile` type
+  - [ ] Reading (`Bun.file()` ...)
     - [x] `Bun.file()`, `Bun.text()`, `Bun.json()` ...
     - [ ] `Bun.stdin`
     - [ ] `Bun.stdout`
     - [ ] `Bun.stderr`
-  - [ ] Writing (`Bun.write()`)
+  - [x] Writing (`Bun.write()`)
 
 - import.meta
 
