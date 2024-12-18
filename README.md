@@ -88,7 +88,7 @@ with possibly the reason for skipping.
   - [ ] `New` returning a `Bun.Database` in the
         form of a set of functions and interfaces.
 
-- [ ] Globals
+- Globals
 
 - [ ] $ Shell -- if possible to implement
 
@@ -166,5 +166,8 @@ or wait until I get to them :)
 - `import.meta`: Gleam modules are not accessible from Bun
   API's, maybe through source maps in the future.
 - Workers: Not stable enough yet.
+- Globals: Not relevant to the scope of this library. (Mostly contains
+  browser-related globals. Some Bun ones, but those ought to be
+  implemented elsewhere.)
 
 #### Workarounds
