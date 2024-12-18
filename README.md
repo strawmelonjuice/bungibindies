@@ -5,10 +5,10 @@ Gleam bindings to the Bun runtime API's.
 [![Package Version](https://img.shields.io/hexpm/v/bungibindies)](https://hex.pm/packages/bungibindies)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/bungibindies/)
 
-> WARNING:
+> WARNING - INCOMPLETE:
 >
-> Please note, only the utilities part is finished so far.
-> I published it so that I could try it out though.
+> Please note, not everything is implemented as of yet.
+> See the [Development](#implementation) section for more information.
 
 ```sh
 gleam add bungibindies@1
@@ -70,15 +70,16 @@ with possibly the reason for skipping.
 - [ ] Streams
 
   - [ ] Stream types
+  - [ ] Stream API's
 
-- [ ] File I/O
+- [x] File I/O
 
   - [x] `Bunfile` type
   - [ ] Reading (`Bun.file()` ...)
     - [x] `Bun.file()`, `Bun.text()`, `Bun.json()` ...
-    - [ ] `Bun.stdin`
-    - [ ] `Bun.stdout`
-    - [ ] `Bun.stderr`
+    - [x] `Bun.stdin`
+    - [x] `Bun.stdout`
+    - [x] `Bun.stderr`
   - [x] Writing (`Bun.write()`)
 
 - import.meta

@@ -19,3 +19,15 @@ export function Mtext(data: BunFile): Promise<string> {
 export async function Mjson(data: BunFile): Promise<Object> {
   return data.json();
 }
+
+export function Cstdout(): BunFile {
+  return Bun.stdout;
+}
+
+export function Cstderr(): BunFile {
+  return Bun.stderr;
+}
+
+export function Cstdin(): BunFile {
+  return Bun.stdin;
+}
