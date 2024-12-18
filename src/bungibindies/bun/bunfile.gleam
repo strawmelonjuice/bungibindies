@@ -23,18 +23,22 @@ pub fn text(file: BunFile) -> Promise(String)
 pub fn json(file: BunFile) -> Promise(Dynamic)
 
 /// [`Bun.stdout`](https://bun.sh/docs/api/file-io#writing-files-bun-write)
+/// - File I/O
 /// 
 /// Write to stdout
 @external(javascript, "../../bun_bun_file_ffi.ts", "Cstdout")
 pub fn stdout() -> BunFile
 
 /// [`Bun.stderr`](https://bun.sh/docs/api/file-io#writing-files-bun-write)
+/// - File I/O
 ///
 /// Write to stderr
 @external(javascript, "../../bun_bun_file_ffi.ts", "Cstderr")
 pub fn stderr() -> BunFile
 
 /// [`Bun.stdin`](https://bun.sh/docs/api/file-io#reading-files-bun-file)
+/// - File I/O
+/// 
 /// Read from stdin
 /// 
 ///This is read-only
