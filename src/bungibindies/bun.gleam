@@ -207,6 +207,8 @@ pub fn nanoseconds() -> Float
 @external(javascript, "../bun_bun_utilities_ffi.ts", "CresolveSync")
 pub fn resolve_sync(module: String, parent: String) -> String
 
+// File I/O
+
 /// [`Bun.file()`](https://bun.sh/docs/api/fs#bun-file)
 /// - File I/O
 ///
