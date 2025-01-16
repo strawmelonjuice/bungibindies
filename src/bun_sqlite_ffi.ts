@@ -12,4 +12,29 @@ export function Mprepare(db: Database, query: string): Statement<unknown> {
   return db.prepare(query);
 }
 
-// query.get(); // => { message: "Hello world" }
+export function Mrun(
+  statement: Statement<unknown>,
+  params: unknown[],
+): { last_insert_row_id: number | bigint; changes: number } {
+  const res = statement.run(...params);
+  return {
+    last_insert_row_id: res.lastInsertRowid,
+    changes: res.changes,
+  };
+}
+export function ParamArray_mnew(): unknown[] {
+  return [];
+}
+export function ParamArray_mpush(arr: unknown[], val: unknown): unknown[] {
+  arr.push(val);
+  return arr;
+}
+export function ParamArray_m_from_array(arr: unknown[]): unknown[] {
+  return arr;
+}
+export function Mall(statement: Statement, params: unknown[]) {
+  return statement.all(...params);
+}
+export function Mget(statement: Statement, params: unknown[]) {
+  return statement.get(...params);
+}

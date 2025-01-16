@@ -41,8 +41,16 @@ with possibly the reason for skipping.
 
 - [ ] SQLite
 
-  - [ ] `New` returning a `Bun.Database` in the
-        form of a set of functions and interfaces.
+  - [x] `new()`
+  - [x] `query()`
+  - [x] `prepare()`
+  - [x] `run()`
+  - [x] `get()`
+  - [x] `all()`
+  - [ ] `iterate()`
+  - [ ] `values()`
+  - [ ] `finalise()`
+  - [ ] `close()`
 
 - Globals
 
@@ -125,6 +133,8 @@ or wait until I get to them :)
 - Globals: Not relevant to the scope of this library. (Mostly contains
   browser-related globals. Some Bun ones, but those ought to be
   implemented elsewhere.)
+- SQLite
+  - `Query.as()`: I don't think this would fit into the Gleam language.
 
 #### Workarounds
 
