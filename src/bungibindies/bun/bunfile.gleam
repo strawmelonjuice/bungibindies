@@ -1,6 +1,6 @@
 //// A `BunFile` represents a lazily-loaded file; initializing it does not actually read the file from disk.
 //// 
-//// > **Note** — The `Bun.file` and `Bun.write` APIs documented on this page are heavily optimized and represent the recommended way to perform file-system tasks using Bun. For operations that are not yet available with `Bun.file`, such as `mkdir` or `readdir`, you can use Bun's [nearly complete](https://bun.sh/docs/runtime/nodejs-apis#node-fs) implementation of the [`node:fs`](https://nodejs.org/api/fs.html) module.
+//// > **Note from Bun** — The `Bun.file` and `Bun.write` APIs documented on this page are heavily optimized and represent the recommended way to perform file-system tasks using Bun. For operations that are not yet available with `Bun.file`, such as `mkdir` or `readdir`, you can use Bun's [nearly complete](https://bun.sh/docs/runtime/nodejs-apis#node-fs) implementation of the [`node:fs`](https://nodejs.org/api/fs.html) module.
 
 import gleam/dynamic.{type Dynamic}
 import gleam/javascript/promise.{type Promise}

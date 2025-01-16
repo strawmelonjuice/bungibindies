@@ -1,6 +1,6 @@
 # bungibindies
 
-Gleam bindings to the Bun runtime API's.
+(incomplete) Gleam bindings to the Bun runtime API's.
 
 [![Package Version](https://img.shields.io/hexpm/v/bungibindies)](https://hex.pm/packages/bungibindies)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/bungibindies/)
