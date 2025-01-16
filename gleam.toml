@@ -4,6 +4,7 @@ description = "(yet incomplete) Gleam bindings to the Bun runtime API's."
 licences = ["Apache-2.0"]
 repository = { type = "github", user = "strawmelonjuice", repo = "bungibindies" }
 links = [{ title = "Bun APIs", href = "https://bun.sh/docs/runtime/bun-apis" }]
+
 target = "javascript"
 gleam = ">= 0.32.0"
 
@@ -17,3 +18,7 @@ gleam_stdlib = ">= 0.0.0 and < 1.0.0"
 
 [dev-dependencies]
 gleeunit = ">= 1.0.0 and < 2.0.0"
+
+
+[documentation]
+pages = [{ title = "Progress", path = "PROGRESS", source = "./PROGRESS.md" }]
