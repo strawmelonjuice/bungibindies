@@ -1,7 +1,12 @@
 import bungibindies
 import bungibindies/bun
 import bungibindies/bun/bunfile
+import bungibindies/bun/sqlite
+import bungibindies/bun/sqlite/param_array
+import gleam/dynamic/decode
+import gleam/javascript/array
 import gleam/javascript/promise
+import gleam/list
 import gleam/string
 import gleeunit
 import gleeunit/should
@@ -38,4 +43,35 @@ pub fn file_write_test() {
   |> string.trim()
   |> should.equal(data)
   |> promise.resolve()
+}
+
+pub fn sqlite_1_test() {
+  // Create a new in-memory database
+  let db = sqlite.new(":memory:")
+  // Create a sample table
+  db
+  |> sqlite.query("CREATE TABLE test (id INTEGER PRIMARY KEY, name TEXT)")
+  |> sqlite.run(param_array.new())
+  db
+  // Insert sample data
+  |> sqlite.query("INSERT INTO test (name) VALUES ('Alice')")
+  |> sqlite.run(param_array.new())
+  db
+  |> sqlite.query("INSERT INTO test (name) VALUES ('Bob')")
+  |> sqlite.run(param_array.new())
+  let result =
+    db |> sqlite.query("SELECT * FROM test") |> sqlite.all(param_array.new())
+  // Close the database
+  db |> sqlite.close()
+  // Decode and check the result
+  result
+  |> array.to_list()
+  |> list.map(fn(row) { decode.run(row, test_person_decoder()) })
+  |> should.equal([Ok(#(1, "Alice")), Ok(#(2, "Bob"))])
+}
+
+fn test_person_decoder() -> decode.Decoder(#(Int, String)) {
+  use id <- decode.field("id", decode.int)
+  use name <- decode.field("name", decode.string)
+  decode.success(#(id, name))
 }

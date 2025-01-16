@@ -6,7 +6,7 @@ repository = { type = "github", user = "strawmelonjuice", repo = "bungibindies" 
 links = [{ title = "Bun APIs", href = "https://bun.sh/docs/runtime/bun-apis" }]
 
 target = "javascript"
-gleam = ">= 0.32.0"
+gleam = ">= 1.4.0"
 
 [javascript]
 typescript_declarations = true

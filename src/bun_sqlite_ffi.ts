@@ -38,3 +38,6 @@ export function Mall(statement: Statement, params: unknown[]) {
 export function Mget(statement: Statement, params: unknown[]) {
   return statement.get(...params);
 }
+export function Mclose(db: Database) {
+  db.close();
+}

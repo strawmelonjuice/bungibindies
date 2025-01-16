@@ -62,3 +62,10 @@ pub fn all(statement: Statement, params: ParamArray) -> Array(Dynamic)
 /// Use `.get()` to run a query and get back the first result as an object.
 @external(javascript, "../../bun_sqlite_ffi.ts", "Mget")
 pub fn get(statement: Statement, params: ParamArray) -> Dynamic
+
+/// [`close()`](https://bun.sh/docs/api/sqlite)
+/// - Sqlite
+/// 
+/// Use `.close()` to close the database connection.
+@external(javascript, "../../bun_sqlite_ffi.ts", "Mclose")
+pub fn close(db: Database) -> Nil

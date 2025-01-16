@@ -50,7 +50,7 @@ with possibly the reason for skipping.
   - [ ] `iterate()`
   - [ ] `values()`
   - [ ] `finalise()`
-  - [ ] `close()`
+  - [x] `close()`
 
 - Globals
 
