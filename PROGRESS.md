@@ -10,7 +10,7 @@ with possibly the reason for skipping.
     - [ ] `Bun.serve()`, `serve.fetch()` and alike
     - [ ] WebSocket server
   - [ ] HTTP client
-    - [ ] `Bun.fetch()
+    - [ ] `Bun.fetch()`
 
 - [ ] Bundler
 

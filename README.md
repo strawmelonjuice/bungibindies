@@ -8,7 +8,7 @@
 > WARNING - INCOMPLETE:
 >
 > Please note, not everything is implemented as of yet.
-> See the [progress](./PROGRESS) section for more information.
+> See the [progress](https://hexdocs.pm/bungibindies/PROGRESS.html) section for more information.
 
 ```sh
 gleam add bungibindies@1

@@ -21,4 +21,6 @@ gleeunit = ">= 1.0.0 and < 2.0.0"
 
 
 [documentation]
-pages = [{ title = "Progress", path = "PROGRESS", source = "./PROGRESS.md" }]
+pages = [
+  { title = "Progress", path = "PROGRESS.html", source = "./PROGRESS.md" },
+]
