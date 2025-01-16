@@ -1,5 +1,5 @@
 name = "bungibindies"
-version = "1.0.0"
+version = "1.0.1"
 description = "(yet incomplete) Gleam bindings to the Bun runtime API's."
 licences = ["Apache-2.0"]
 repository = { type = "github", user = "strawmelonjuice", repo = "bungibindies" }
