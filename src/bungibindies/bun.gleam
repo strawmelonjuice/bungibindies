@@ -226,3 +226,13 @@ pub fn file(path: String) -> BunFile
 /// @returns — A promise that resolves with the number of bytes written.
 @external(javascript, "../bun_bun_file_ffi.ts", "Cwrite")
 pub fn write(destination: BunFile, data: a) -> Promise(Int)
+
+import bungibindies/bun/http/serve
+
+/// [`Bun.serve()`](https://bun.sh/docs/api/http#start-a-server-bun-serve)
+/// - HTTP -> Server
+/// 
+/// Start an HTTP server in Bun with `Bun.serve`.
+pub fn serve(serve_options: serve.ServeOptions) -> serve.Server {
+  serve.serve(serve_options)
+}
