@@ -6,8 +6,9 @@ with possibly the reason for skipping.
 
 - [ ] HTTP API's
 
-  - [ ] HTTP server
-    - [ ] `Bun.serve()`, `serve.fetch()` and alike
+  - [x] HTTP server
+    - [x] `Bun.serve()`, `serve.fetch()` and alike
+      - [ ] `Server` type methods
     - [ ] WebSocket server
   - [ ] HTTP client
     - [ ] `Bun.fetch()`
