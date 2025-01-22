@@ -33,8 +33,5 @@ pub fn method(req: Request) -> String
 @external(javascript, ".././bun_serve_ffi.ts", "M_req_mode")
 pub fn mode(req: Request) -> String
 
-@external(javascript, ".././bun_serve_ffi.ts", "M_req_referrer")
-pub fn referrer(req: Request) -> String
-
 @external(javascript, ".././bun_serve_ffi.ts", "M_req_keepalive")
 pub fn keepalive(req: Request) -> Bool

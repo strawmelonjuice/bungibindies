@@ -233,6 +233,6 @@ import bungibindies/bun/http/serve
 /// - HTTP -> Server
 /// 
 /// Start an HTTP server in Bun with `Bun.serve`.
-pub fn serve(serve_options: serve.ServeOptions) -> serve.Server {
+pub fn serve(serve_options: serve.ServeOptions) -> Result(serve.Server, String) {
   serve.serve(serve_options)
 }

@@ -22,18 +22,8 @@ pub type ServeOptions {
   )
 }
 
-@internal
-pub fn serve(options: ServeOptions) -> Server {
-  let houston = fn(r: Int) {
-    case r {
-      1 -> panic as "One or more static routes do not start with a slash!"
-      _ -> panic as "Unknown server error!"
-    }
-  }
-  i_serve(options, houston)
-}
-
 @external(javascript, "./bun_serve_ffi.ts", "Cserve")
-fn i_serve(options: ServeOptions, houston: fn(Int) -> Nil) -> Server
+@internal
+pub fn serve(options: ServeOptions) -> Result(Server, String)
 
 pub type Server
