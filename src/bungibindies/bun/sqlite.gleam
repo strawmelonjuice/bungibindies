@@ -14,7 +14,7 @@ pub type Statement
 /// - Sqlite
 ///
 /// Create a new database connection
-@external(javascript, "../../bun_sqlite_ffi.ts", "Cnew")
+@external(javascript, "./bun_sqlite_ffi.ts", "Cnew")
 pub fn new(to: String) -> Database
 
 /// [`bun:sqlite.Database -> query()`](https://bun.sh/docs/api/sqlite)
@@ -22,7 +22,7 @@ pub fn new(to: String) -> Database
 ///
 /// Use the `db.query()` method on your `Database` instance to [prepare](https://www.sqlite.org/c3ref/prepare.html) a SQL query. The result is a `Statement` instance that will be cached on the `Database` instance. _The query will not be executed.
 /// > **Note** — Use the `.prepare()` method to prepare a query _without_ caching it on the `Database` instance.
-@external(javascript, "../../bun_sqlite_ffi.ts", "Mquery")
+@external(javascript, "./bun_sqlite_ffi.ts", "Mquery")
 pub fn query(db: Database, query: String) -> Statement
 
 /// [`bun:sqlite.Statement -> prepare()`](https://bun.sh/docs/api/sqlite)
@@ -30,7 +30,7 @@ pub fn query(db: Database, query: String) -> Statement
 ///
 /// Use the `db.prepare()` method on your `Database` instance to [prepare](https://www.sqlite.org/c3ref/prepare.html) a SQL query. The result is a `Statement` instance that will NOT be cached on the `Database` instance. _The query will not be executed.
 /// > **Note** — Use the `.query()` method to prepare a query _with_ caching it on the `Database` instance.
-@external(javascript, "../../bun_sqlite_ffi.ts", "Mprepare")
+@external(javascript, "./bun_sqlite_ffi.ts", "Mprepare")
 pub fn prepare(db: Database, query: String) -> Statement
 
 /// The `RunResult` type is an object with two properties: `lastInsertRowid` and `changes`.
@@ -46,26 +46,26 @@ pub type RunResult {
 ///
 /// Internally, this calls [`sqlite3_reset`](https://www.sqlite.org/capi3ref.html#sqlite3_reset) and calls [`sqlite3_step`](https://www.sqlite.org/capi3ref.html#sqlite3_step) once. Stepping through all the rows is not necessary when you don't care about the results.
 /// The `lastInsertRowid` property returns the ID of the last row inserted into the database. The `changes` property is the number of rows affected by the query.
-@external(javascript, "../../bun_sqlite_ffi.ts", "Mrun")
+@external(javascript, "./bun_sqlite_ffi.ts", "Mrun")
 pub fn run(statement: Statement, params: ParamArray) -> RunResult
 
 /// [`all`](https://bun.sh/docs/api/sqlite)
 /// - Sqlite
 /// 
 /// Use `.all()` to run a query and get back the results as an array of objects.
-@external(javascript, "../../bun_sqlite_ffi.ts", "Mall")
+@external(javascript, "./bun_sqlite_ffi.ts", "Mall")
 pub fn all(statement: Statement, params: ParamArray) -> Array(Dynamic)
 
 /// [`get`](https://bun.sh/docs/api/sqlite)
 /// - Sqlite
 /// 
 /// Use `.get()` to run a query and get back the first result as an object.
-@external(javascript, "../../bun_sqlite_ffi.ts", "Mget")
+@external(javascript, "./bun_sqlite_ffi.ts", "Mget")
 pub fn get(statement: Statement, params: ParamArray) -> Dynamic
 
 /// [`close()`](https://bun.sh/docs/api/sqlite)
 /// - Sqlite
 /// 
 /// Use `.close()` to close the database connection.
-@external(javascript, "../../bun_sqlite_ffi.ts", "Mclose")
+@external(javascript, "./bun_sqlite_ffi.ts", "Mclose")
 pub fn close(db: Database) -> Nil

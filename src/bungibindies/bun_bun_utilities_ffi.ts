@@ -1,5 +1,5 @@
 import type { EditorOptions } from "bun";
-import { bufferToArrayOfNumbers } from "./type_layers";
+import { bufferToArrayOfNumbers } from "../type_layers";
 
 export function Cversion(): string {
   return Bun.version;
