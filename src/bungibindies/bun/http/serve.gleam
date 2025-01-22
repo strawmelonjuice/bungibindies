@@ -33,7 +33,7 @@ pub fn serve(options: ServeOptions) -> Server {
   i_serve(options, houston)
 }
 
-@external(javascript, "../../../bun_serve_ffi.ts", "Cserve")
+@external(javascript, "./bun_serve_ffi.ts", "Cserve")
 fn i_serve(options: ServeOptions, houston: fn(Int) -> Nil) -> Server
 
 pub type Server

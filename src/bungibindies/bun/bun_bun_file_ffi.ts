@@ -1,5 +1,4 @@
 import type { BunFile } from "bun";
-// import { bufferToArrayOfNumbers } from "./type_layers";
 
 export function Cfile(path: string) {
   return Bun.file(path);
