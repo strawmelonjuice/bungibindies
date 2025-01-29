@@ -25,6 +25,13 @@ pub fn new(to: String) -> Database
 @external(javascript, "./bun_sqlite_ffi.ts", "Mquery")
 pub fn query(db: Database, query: String) -> Statement
 
+/// [`bun:sqlite.Database -> exec()`](https://bun.sh/docs/api/sqlite)
+/// - Sqlite
+///
+/// Use the `db.exec()` method on your `Database` instance to execute a SQL query. The result is a `RunResult` instance.
+@external(javascript, "./bun_sqlite_ffi.ts", "Mexec")
+pub fn exec(db: Database, query: String) -> RunResult
+
 /// [`bun:sqlite.Statement -> prepare()`](https://bun.sh/docs/api/sqlite)
 /// - Sqlite
 ///

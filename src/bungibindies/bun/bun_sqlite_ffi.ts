@@ -1,5 +1,13 @@
 import { Database, type Statement } from "bun:sqlite";
 
+export function Mexec(db: Database, query: string) {
+  const res = db.exec(query);
+  return {
+    last_insert_row_id: res.lastInsertRowid,
+    changes: res.changes,
+  };
+}
+
 export function Cnew(to: string) {
   return new Database(to);
 }
