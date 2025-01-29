@@ -12,28 +12,28 @@ pub type BunFile
 /// - File I/O
 ///
 /// Read the contents of a file as a string.
-@external(javascript, "../../bun_bun_file_ffi.ts", "Mtext")
+@external(javascript, "./bun_bun_file_ffi.ts", "Mtext")
 pub fn text(file: BunFile) -> Promise(String)
 
 /// [`Bunfile.json()`](https://bun.sh/docs/api/file-io#reading-files-bun-file)
 /// - File I/O
 ///
 /// Read the contents of a file as a JSON object.
-@external(javascript, "../../bun_bun_file_ffi.ts", "Mjson")
+@external(javascript, "./bun_bun_file_ffi.ts", "Mjson")
 pub fn json(file: BunFile) -> Promise(Dynamic)
 
 /// [`Bun.stdout`](https://bun.sh/docs/api/file-io#writing-files-bun-write)
 /// - File I/O
 /// 
 /// Write to stdout
-@external(javascript, "../../bun_bun_file_ffi.ts", "Cstdout")
+@external(javascript, "./bun_bun_file_ffi.ts", "Cstdout")
 pub fn stdout() -> BunFile
 
 /// [`Bun.stderr`](https://bun.sh/docs/api/file-io#writing-files-bun-write)
 /// - File I/O
 ///
 /// Write to stderr
-@external(javascript, "../../bun_bun_file_ffi.ts", "Cstderr")
+@external(javascript, "./bun_bun_file_ffi.ts", "Cstderr")
 pub fn stderr() -> BunFile
 
 /// [`Bun.stdin`](https://bun.sh/docs/api/file-io#reading-files-bun-file)
@@ -42,5 +42,5 @@ pub fn stderr() -> BunFile
 /// Read from stdin
 /// 
 ///This is read-only
-@external(javascript, "../../bun_bun_file_ffi.ts", "Cstdin")
+@external(javascript, "./bun_bun_file_ffi.ts", "Cstdin")
 pub fn stdin() -> BunFile
