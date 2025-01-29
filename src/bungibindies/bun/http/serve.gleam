@@ -22,7 +22,7 @@ pub type ServeOptions {
   )
 }
 
-@external(javascript, "./bun_serve_ffi.ts", "Cserve")
+@external(javascript, "../../../bun_serve_ffi.ts", "Cserve")
 @internal
 pub fn serve(options: ServeOptions) -> Result(Server, String)
 
