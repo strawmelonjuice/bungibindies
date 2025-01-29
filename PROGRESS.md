@@ -46,6 +46,7 @@ with possibly the reason for skipping.
   - [x] `query()`
   - [x] `prepare()`
   - [x] `run()`
+  - [x] `exec()`
   - [x] `get()`
   - [x] `all()`
   - [ ] `iterate()`
