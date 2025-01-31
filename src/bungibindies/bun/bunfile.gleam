@@ -44,3 +44,16 @@ pub fn stderr() -> BunFile
 ///This is read-only
 @external(javascript, "../../bun_bun_file_ffi.ts", "Cstdin")
 pub fn stdin() -> BunFile
+
+/// [`Bunfile.delete()`](https://bun.sh/guides/write-file/unlink)
+/// - File I/O
+/// 
+/// Unlink (delete) a file.
+@external(javascript, "../../bun_bun_file_ffi.ts", "Mdelete")
+pub fn delete(file: BunFile) -> Promise(Nil)
+
+/// [`Bunfile.unlink()`](https://bun.sh/guides/write-file/unlink)
+/// - File I/O
+/// 
+/// Unlink (delete) a file.
+pub const unlink = delete

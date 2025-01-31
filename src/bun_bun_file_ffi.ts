@@ -15,6 +15,10 @@ export function Mtext(data: BunFile): Promise<string> {
   return data.text();
 }
 
+export function Mdelete(data: BunFile): Promise<void> {
+  return data.unlink();
+}
+
 // biome-ignore lint/complexity/noBannedTypes: Gleam knows this'll be `Dynamic`.
 export async function Mjson(data: BunFile): Promise<Object> {
   return data.json();
