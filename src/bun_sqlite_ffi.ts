@@ -1,4 +1,4 @@
-import { Database, type Statement } from "bun:sqlite";
+import { Database, type SQLQueryBindings, type Statement } from "bun:sqlite";
 import * as gleam from "./gleam.mjs";
 
 export function Mexec(db: Database, query: string) {
@@ -23,7 +23,7 @@ export function Mprepare(db: Database, query: string): Statement<unknown> {
 
 export function Mrun(
   statement: Statement<unknown>,
-  params: string[],
+  params: SQLQueryBindings[],
 ): { last_insert_row_id: number | bigint; changes: number } {
   const res = statement.run(...params);
   // return {

@@ -2,8 +2,8 @@
 
 import bungibindies/bun/bunfile.{type BunFile}
 import gleam/javascript/array.{type Array}
-import gleam/javascript/map.{type Map}
 import gleam/javascript/promise.{type Promise}
+import gleam/option.{type Option}
 
 // Utilities
 
@@ -60,35 +60,19 @@ pub fn sleep_sync(ms: Float) -> Nil
 /// - Utilities
 ///
 /// > Returns the path to the given executable if it is in the PATH.
-pub fn which(executable: String) -> Result(String, Nil) {
-  case v_which(executable) |> array.to_list {
-    [path] -> Ok(path)
-    _ -> Error(Nil)
-  }
-}
-
 @external(javascript, "../bun_bun_utilities_ffi.ts", "Cwhich")
-fn v_which(executable: String) -> Array(String)
+pub fn which(executable: String) -> Result(String, Nil)
 
 /// [`Bun.which()`](https://bun.sh/docs/api/utils#bun-which)
 /// - Utilities
 ///
 /// > Returns the path to the given executable if it is in the PATH
+@external(javascript, "../bun_bun_utilities_ffi.ts", "CwhichWithOptions")
 pub fn which_with_options(
   executable: String,
-  options: Map(String, String),
-) -> Result(String, Nil) {
-  case v_which_with_options(executable, options) |> array.to_list {
-    [path] -> Ok(path)
-    _ -> Error(Nil)
-  }
-}
-
-@external(javascript, "../bun_bun_utilities_ffi.ts", "CwhichWithOptions")
-fn v_which_with_options(
-  executable: String,
-  options: Map(String, String),
-) -> Array(String)
+  optional_path: Option(String),
+  optional_cwd: Option(String),
+) -> Result(String, Nil)
 
 /// [`Bun.randomUUIDv7()](https://bun.sh/docs/api/utils#bun-randomuuidv7)
 /// - Utilities
@@ -125,7 +109,9 @@ pub fn open_in_editor(path: String) -> Nil
 @external(javascript, "../bun_bun_utilities_ffi.ts", "CopenInEditorWithOptions")
 pub fn open_in_editor_with_options(
   path: String,
-  options: Map(String, String),
+  editor: Option(String),
+  line: Option(Int),
+  column: Option(Int),
 ) -> Nil
 
 /// [`Bun.deepEquals()`](https://bun.sh/docs/api/utils#bun-deepequals)
@@ -234,5 +220,7 @@ import bungibindies/bun/http/serve
 ///
 /// Start an HTTP server in Bun with `Bun.serve`.
 pub fn serve(serve_options: serve.ServeOptions) -> Result(serve.Server, String) {
-  serve.serve(serve_options)
+  serve_options
+  |> serve.serve_options_to_internal_serve_options
+  |> serve.serve()
 }

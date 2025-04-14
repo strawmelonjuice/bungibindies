@@ -1,8 +1,10 @@
+import gleam/dynamic.{type Dynamic}
 import gleam/javascript/array.{type Array}
 
 /// An implementation of javascript's `Array` type, but unlike the gleam/javascript/array module, this one allows for the use of `Any` as a type parameter.
 /// This also means Gleam should not be touching this type, let Bun handle that.
-pub type ParamArray
+pub type ParamArray =
+  Array(Dynamic)
 
 /// Create a new `ParamArray` instance.
 @external(javascript, "../../../bun_sqlite_ffi.ts", "ParamArray_mnew")

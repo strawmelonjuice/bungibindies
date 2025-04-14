@@ -1,5 +1,5 @@
 import type { EditorOptions } from "bun";
-import { bufferToArrayOfNumbers } from "./type_layers";
+import { bufferToArrayOfNumbers } from "./internals/type_gymnastics_ts";
 
 export function Cversion(): string {
   return Bun.version;
@@ -33,6 +33,7 @@ export function Cwhich(cmd: string): string[] {
 
 export function CwhichWithOptions(
   cmd: string,
+
   options: { PATH?: string; cwd?: string },
 ): string[] {
   const p = Bun.which(cmd, options);
