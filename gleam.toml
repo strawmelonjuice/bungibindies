@@ -5,7 +5,7 @@ licences = ["Apache-2.0"]
 repository = { type = "github", user = "strawmelonjuice", repo = "bungibindies" }
 links = [{ title = "Bun APIs", href = "https://bun.sh/docs/runtime/bun-apis" }]
 target = "javascript"
-gleam = ">= 1.7.0"
+gleam = ">= 1.9.0"
 
 [javascript]
 typescript_declarations = true
