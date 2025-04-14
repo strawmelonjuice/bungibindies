@@ -10,10 +10,10 @@ pub fn from_dict(some_dict: dict.Dict(a, b)) -> InternalMap(a, b) {
   new_map
 }
 
-@external(javascript, "../../ffi.mjs", "map_new")
+@external(javascript, "./type_gymnastics_ts.ts", "map_new")
 fn map_new() -> InternalMap(key, value)
 
-@external(javascript, "../../ffi.mjs", "map_set")
+@external(javascript, "./type_gymnastics_ts.ts", "map_set")
 fn map_set(
   a: InternalMap(key, value),
   b: key,

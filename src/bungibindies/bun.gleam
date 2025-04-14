@@ -25,15 +25,8 @@ pub fn revision() -> String
 /// - Utilities
 ///
 /// > Fetches the value of an environment variable.
-pub fn env(key: String) -> Result(String, Nil) {
-  case v_env(key) |> array.to_list {
-    [value] -> Ok(value)
-    _ -> Error(Nil)
-  }
-}
-
 @external(javascript, "../bun_bun_utilities_ffi.ts", "Cenv")
-fn v_env(key: String) -> Array(String)
+pub fn env(key: String) -> Result(String, Nil)
 
 /// [`Bun.main`](https://bun.sh/docs/api/utils#bun-main)
 /// - Utilities

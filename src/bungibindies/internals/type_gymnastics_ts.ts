@@ -1,5 +1,3 @@
-import * as gleam from "../../gleam.mjs";
-
 export function bufferToArrayOfNumbers(buffer: Buffer): number[] {
   if (buffer.length > 0) {
     const data = new Array(buffer.length);
@@ -19,9 +17,4 @@ export function map_set(
   value: unknown,
 ): Map<unknown, unknown> {
   return map.set(key, value);
-}
-
-function option_some_or_empty(an_option: { 0?: unknown }): unknown | null {
-  if (an_option.0 == undefined) { return null };
-  an_option.0
 }
