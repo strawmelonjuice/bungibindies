@@ -4,7 +4,7 @@ import gleam/javascript/array.{type Array}
 pub type Request
 
 @external(javascript, "../../../../bun_serve_ffi.ts", "M_req_new")
-pub fn new() -> Request
+pub fn new_from_url(url: String) -> Request
 
 @external(javascript, "../../../../bun_serve_ffi.ts", "M_req_set_url")
 pub fn set_url(req: Request, url: String) -> Request

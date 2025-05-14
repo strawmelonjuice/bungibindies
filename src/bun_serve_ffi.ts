@@ -108,8 +108,8 @@ export function M_res_type(res: Response) {
 }
 
 // `Request` methods
-export function M_req_new() {
-  return new Request("", {
+export function M_req_new(url: string) {
+  return new Request(url, {
     method: "GET",
     headers: [],
     body: "",

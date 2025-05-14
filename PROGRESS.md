@@ -10,23 +10,43 @@ with possibly the reason for skipping.
     - [x] `Bun.serve()`, `serve.fetch()` and alike
       - [ ] `Server` type methods
     - [ ] WebSocket server
+      - [ ] WebSocket event handlers (`message`, `open`, `close`, `drain`)
+      - [ ] Pub/Sub functionality (`subscribe`, `publish`, `unsubscribe`)
+      - [ ] Compression support (`perMessageDeflate`)
+      - [ ] WebSocket client (`new WebSocket()`)
   - [ ] HTTP client
     - [ ] `Bun.fetch()`
 
 - [ ] Bundler
 
-  - [ ] `Bun.bundle()`
+  - [ ] `Bun.build()` (new bundler API)
 
-- Workers
+- [ ] Workers
+  - [ ] Worker constructors
+  - [ ] Worker posting & receiving messages
+  - [ ] Worker termination
 
 - [ ] Binary data
 
   - [ ] Types
+    - [ ] `ArrayBuffer` support
+    - [ ] `TypedArray` variants (`Uint8Array`, etc.)
+    - [ ] `DataView` support
+    - [ ] `Buffer` compatibility
+    - [ ] `Blob` support
+    - [ ] `BunFile` type (extending `Blob`) with specific methods
+    - [ ] `File` type (extending `Blob`)
 
 - [ ] Streams
 
   - [ ] Stream types
+    - [ ] `ReadableStream` support
+    - [ ] `WritableStream` support
+    - [ ] Direct `ReadableStream` (optimized version)
+    - [ ] Async generator streams support
   - [ ] Stream API's
+    - [ ] `Bun.ArrayBufferSink` for fast incremental buffer writing
+    - [ ] Stream conversion utilities (`Bun.readableStreamTo*` methods)
 
 - [x] File I/O
 
@@ -38,23 +58,38 @@ with possibly the reason for skipping.
     - [x] `Bun.stderr`
   - [x] Writing (`Bun.write()`)
 
-- import.meta
+- [ ] import.meta
+  - [ ] `import.meta.dir`
+  - [ ] `import.meta.path`
+  - [ ] `import.meta.url`
+  - [ ] `import.meta.main`
+  - [ ] `import.meta.resolve`
 
-- [ ] SQLite
+- [ ] SQL & Databases
+  - [ ] SQLite
+    - [x] `new()`
+    - [x] `query()`
+    - [x] `prepare()`
+    - [x] `run()`
+    - [x] `exec()`
+    - [x] `get()`
+    - [x] `all()`
+    - [ ] `iterate()`
+    - [ ] `values()`
+    - [ ] `finalise()`
+    - [x] `close()`
+  - [ ] Redis client
+    - [ ] Connection methods
+    - [ ] Commands & operations
+  - [ ] S3 Object Storage
+    - [ ] `Bun:s3` client
+    - [ ] Operations (get, put, list, etc.)
 
-  - [x] `new()`
-  - [x] `query()`
-  - [x] `prepare()`
-  - [x] `run()`
-  - [x] `exec()`
-  - [x] `get()`
-  - [x] `all()`
-  - [ ] `iterate()`
-  - [ ] `values()`
-  - [ ] `finalise()`
-  - [x] `close()`
+- [ ] FileSystemRouter
+  - [ ] Next.js-style routing with `Bun.FileSystemRouter`
+  - [ ] Route matching with URLs and paths
 
-- Globals
+- [ ] Globals
 
 - [ ] $ Shell -- if possible to implement
 
@@ -65,26 +100,41 @@ with possibly the reason for skipping.
   - [ ] `Bun.execSync()`
   - [ ] `Bun.spawnSync()`
 
-- [ ] TCP
+- [ ] TCP & Network
 
-  - [ ] `Bun.listen()`
-  - [ ] `Bun.connect()`
+  - [ ] `Bun.listen()` (TCP server)
+  - [ ] `Bun.connect()` (TCP client)
+  - [ ] UDP sockets
 
 - [ ] Transpiler
 
-  - [ ] `New` returning a `Bun.Transpiler` in the form of
-        a set of functions and interfaces.
+  - [ ] `Bun.Transpiler` for code transformation
 
 - [ ] Hashing
 
   - [ ] `Bun.password_hash()` and `Bun.password_verify()`
   - [ ] `Bun.hash()`
+  - [ ] `Bun.CryptoHasher`
 
-- Console
+- [ ] HTMLRewriter
+  - [ ] HTML transformation API
+  - [ ] Element handlers
+
+- [ ] Cookie
+  - [ ] `Bun.CookieMap` for parsing and manipulating cookies
 
 - [ ] FFI
-- [ ] HTMLRewriter
+  - [ ] Foreign Function Interface for calling native code
+  - [ ] C Compiler integration
+
 - [ ] Testing
+  - [ ] Test runner utilities
+  - [ ] Assertion helpers
+  - [ ] Mock functionality
+
+- [ ] Glob
+  - [ ] `Bun.Glob` for file pattern matching
+
 - [x] Utilities
 
   - [x] `Bun.version`
@@ -102,17 +152,24 @@ with possibly the reason for skipping.
   - [x] `Bun.stringWidth()`
   - [x] `Bun.fileURLToPath()`
   - [x] `Bun.pathToFileURL()`
-  - `Bun.gzipSync`
-  - `Bun.gunzipSync`
-  - `Bun.deflateSync`
-  - `Bun.inflateSync`
+  - [ ] `Bun.gzipSync()`
+  - [ ] `Bun.gunzipSync()`
+  - [ ] `Bun.deflateSync()`
+  - [ ] `Bun.inflateSync()`
   - [x] `Bun.inspect()`
   - [x] `Bun.nanoseconds()`
-  - `Bun.readableStreamTo*()`
+  - [ ] `Bun.readableStreamTo*()` methods for stream conversion
   - [x] `Bun.resolveSync()`
-  - `serialize` & `deserialize` in `bun:jsc`
+  - [ ] `serialize` & `deserialize` in `bun:jsc`
 
-- DNS
+- [ ] DNS
+  - [ ] DNS resolver utilities
+
+- [ ] Semver
+  - [ ] Semantic versioning utilities
+
+- [ ] Color
+  - [ ] Terminal color utilities
 
 #### Skipped
 
@@ -126,12 +183,12 @@ or wait until I get to them :)
 - Utilities -> `Bun.inflateSync`: Not sure how to implement this yet.
 - Utilities -> `Bun.readableStreamTo*()`: Not sure how to implement this.
 - Utilities -> `serialize` & `deserialize` in `bun:jsc`:
-  Not sure how to implement this.
-- Console: Not sure how to implement this yet.
-- DNS: Not stable enough yet.
+  Not sure how to implement this yet.
+- [ ] DNS: Not stable enough yet.
 - `import.meta`: Gleam modules are not accessible from Bun
   API's, maybe through source maps in the future.
 - Workers: Not stable enough yet.
+- Color: Not implementing because there are enough other packages that implement terminal colors.
 - Globals: Not relevant to the scope of this library. (Mostly contains
   browser-related globals. Some Bun ones, but those ought to be
   implemented elsewhere.)
