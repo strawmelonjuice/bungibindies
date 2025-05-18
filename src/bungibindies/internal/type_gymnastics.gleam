@@ -19,3 +19,10 @@ fn map_set(
   b: key,
   c: value,
 ) -> InternalMap(key, value)
+
+@external(javascript, "./type_gymnastics_ts.ts", "map_set")
+fn map_update(
+  a: InternalMap(key, value),
+  b: key,
+  c: fn (value) -> value,
+) -> InternalMap(key, value)
