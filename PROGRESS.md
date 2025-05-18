@@ -22,6 +22,7 @@ with possibly the reason for skipping.
   - [ ] `Bun.build()` (new bundler API)
 
 - [ ] Workers
+
   - [ ] Worker constructors
   - [ ] Worker posting & receiving messages
   - [ ] Worker termination
@@ -59,6 +60,7 @@ with possibly the reason for skipping.
   - [x] Writing (`Bun.write()`)
 
 - [ ] import.meta
+
   - [ ] `import.meta.dir`
   - [ ] `import.meta.path`
   - [ ] `import.meta.url`
@@ -66,6 +68,7 @@ with possibly the reason for skipping.
   - [ ] `import.meta.resolve`
 
 - [ ] SQL & Databases
+
   - [ ] SQLite
     - [x] `new()`
     - [x] `query()`
@@ -86,6 +89,7 @@ with possibly the reason for skipping.
     - [ ] Operations (get, put, list, etc.)
 
 - [ ] FileSystemRouter
+
   - [ ] Next.js-style routing with `Bun.FileSystemRouter`
   - [ ] Route matching with URLs and paths
 
@@ -95,10 +99,11 @@ with possibly the reason for skipping.
 
 - [ ] Child processes
 
-  - [ ] `Bun.spawn()`
-  - [ ] `Bun.exec()`
-  - [ ] `Bun.execSync()`
-  - [ ] `Bun.spawnSync()`
+  - [x] `Bun.spawn()`
+    - [ ] `Bun.spawn()` with `stdin` option.
+    - [ ] `Bun.spawn()` with IPC communication
+  - [x] `Bun.spawnSync()`
+    - [ ] `Bun.spawnSync()` with `stdin` option.
 
 - [ ] TCP & Network
 
@@ -117,22 +122,27 @@ with possibly the reason for skipping.
   - [ ] `Bun.CryptoHasher`
 
 - [ ] HTMLRewriter
+
   - [ ] HTML transformation API
   - [ ] Element handlers
 
 - [ ] Cookie
+
   - [ ] `Bun.CookieMap` for parsing and manipulating cookies
 
 - [ ] FFI
+
   - [ ] Foreign Function Interface for calling native code
   - [ ] C Compiler integration
 
 - [ ] Testing
+
   - [ ] Test runner utilities
   - [ ] Assertion helpers
   - [ ] Mock functionality
 
 - [ ] Glob
+
   - [ ] `Bun.Glob` for file pattern matching
 
 - [x] Utilities
@@ -163,9 +173,11 @@ with possibly the reason for skipping.
   - [ ] `serialize` & `deserialize` in `bun:jsc`
 
 - [ ] DNS
+
   - [ ] DNS resolver utilities
 
 - [ ] Semver
+
   - [ ] Semantic versioning utilities
 
 - [ ] Color

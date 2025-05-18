@@ -1,6 +1,6 @@
 import bungibindies/bun/http/serve/request.{type Request}
 import bungibindies/bun/http/serve/response.{type Response}
-import bungibindies/internals/type_gymnastics.{type InternalMap}
+import bungibindies/internal/type_gymnastics.{type InternalMap}
 import gleam/dict.{type Dict}
 import gleam/javascript/promise.{type Promise}
 import gleam/option.{type Option, None, Some}
@@ -29,7 +29,7 @@ pub fn serve_options_to_internal_serve_options(
 ) -> InternalServeOptions {
   let static_served = {
     case serve_options.static_served {
-      Some(routes) -> Some(type_gymnastics.from_dict(routes))
+      Some(routes) -> Some(type_gymnastics.map_from_dict(routes))
       None -> None
     }
   }
