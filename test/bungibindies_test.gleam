@@ -1,12 +1,15 @@
+import birdie
 import bungibindies
 import bungibindies/bun
 import bungibindies/bun/bunfile
+import bungibindies/bun/spawn.{OptionsToSubprocess}
 import bungibindies/bun/sqlite
 import bungibindies/bun/sqlite/param_array
 import gleam/dynamic/decode
 import gleam/javascript/array
 import gleam/javascript/promise
 import gleam/list
+import gleam/option
 import gleam/string
 import gleeunit
 import gleeunit/should
@@ -74,4 +77,18 @@ fn test_person_decoder() -> decode.Decoder(#(Int, String)) {
   use id <- decode.field("id", decode.int)
   use name <- decode.field("name", decode.string)
   decode.success(#(id, name))
+}
+
+pub fn spawn_test() {
+  let assert Ok(bunbin) = bun.which("bun") as "THIS IS INSANE"
+  let result =
+    spawn.sync(OptionsToSubprocess(
+      cmd: [bunbin, "x", "cowsay", "hello"],
+      cwd: option.None,
+      env: option.None,
+      stderr: option.None,
+      stdout: option.None,
+    ))
+  let assert Ok(output) = spawn.stdout(result)
+  output |> birdie.snap(title: "cowsay hello (bun spawnsync test)")
 }
