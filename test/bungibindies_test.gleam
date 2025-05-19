@@ -92,3 +92,9 @@ pub fn spawn_test() {
   let assert Ok(output) = spawn.stdout(result)
   output |> birdie.snap(title: "cowsay hello (bun spawnsync test)")
 }
+
+pub fn escape_html_test() {
+  let input = "<div>Hello & welcome to <b>Gleam</b>!</div>"
+  let result = bun.escape_html(input)
+  result |> birdie.snap(title: "escape_html test")
+}

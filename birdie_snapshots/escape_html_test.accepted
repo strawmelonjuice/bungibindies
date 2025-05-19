@@ -1,0 +1,5 @@
+---
+version: 1.3.0
+title: escape_html test
+---
+&lt;div&gt;Hello &amp; welcome to &lt;b&gt;Gleam&lt;/b&gt;!&lt;/div&gt;
