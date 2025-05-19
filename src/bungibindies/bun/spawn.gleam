@@ -120,26 +120,26 @@ fn options_processor(
 // ==================================================================================
 
 /// sync spawn
-@external(javascript, "../bun_spawn_ffi", "spawn_sync")
+@external(javascript, "./bun_spawn_ffi", "spawn_sync")
 fn spync(one: InternalOptionsToSubprocess) -> SyncSubprocessObject
 
 /// async spawn
-@external(javascript, "../bun_spawn_ffi", "spawn")
+@external(javascript, "./bun_spawn_ffi", "spawn")
 fn aspync(one: InternalOptionsToSubprocess) -> AsyncSubprocessObject
 
-@external(javascript, "../bun_spawn_ffi", "process_stdout")
+@external(javascript, "./bun_spawn_ffi", "process_stdout")
 fn process_stdout_sync(from: SyncSubprocessObject) -> Result(String, Nil)
 
-@external(javascript, "../bun_spawn_ffi", "process_stdout")
+@external(javascript, "./bun_spawn_ffi", "process_stdout")
 fn process_stdout_async(from: AsyncSubprocessObject) -> Result(String, Nil)
 
-@external(javascript, "../bun_spawn_ffi", "process_stderr")
+@external(javascript, "./bun_spawn_ffi", "process_stderr")
 fn process_stderr_sync(from: SyncSubprocessObject) -> Result(String, Nil)
 
-@external(javascript, "../bun_spawn_ffi", "process_stderr")
+@external(javascript, "./bun_spawn_ffi", "process_stderr")
 fn process_stderr_async(from: AsyncSubprocessObject) -> Result(String, Nil)
 
-@external(javascript, "../bun_spawn_ffi", "asyncsubprocess_kill")
+@external(javascript, "./bun_spawn_ffi", "asyncsubprocess_kill")
 fn process_kill_async(
   from: AsyncSubprocessObject,
   with: SomethingOrUndefined,
@@ -183,30 +183,30 @@ pub fn stderr(from subprocess: SubProcess) -> Result(String, Nil) {
 
 /// Synchronously get the exit code of the subprocess
 /// If the process hasn't exited yet, this will return `Error(Nil)`
-@external(javascript, "../bun_spawn_ffi", "asyncsubprocess_exit_code")
+@external(javascript, "./bun_spawn_ffi", "asyncsubprocess_exit_code")
 pub fn exit_code(from subprocess: AsyncSubprocessObject) -> Result(Int, Nil)
 
 /// Asynchronously get the exit code of the subprocess
 /// The promise will resolve when the process exits.
-@external(javascript, "../bun_spawn_ffi", "asyncsubprocess_exited")
+@external(javascript, "./bun_spawn_ffi", "asyncsubprocess_exited")
 pub fn exited(from subprocess: AsyncSubprocessObject) -> Promise(Int)
 
 /// Get the PID of the subprocess.
-@external(javascript, "../bun_spawn_ffi", "asyncsubprocess_pid")
+@external(javascript, "./bun_spawn_ffi", "asyncsubprocess_pid")
 pub fn pid(from subprocess: AsyncSubprocessObject) -> Int
 
 /// Get the success status from the subprocess.
-@external(javascript, "../bun_spawn_ffi", "syncsubprocess_success")
+@external(javascript, "./bun_spawn_ffi", "syncsubprocess_success")
 pub fn success(from subprocess: SyncSubprocessObject) -> Bool
 
 /// Before shutting down, Bun will wait for all subprocesses to exit by default
 /// This method will tell Bun to not wait for this process to exit before shutting down.
-@external(javascript, "../bun_spawn_ffi", "asyncsubprocess_unref")
+@external(javascript, "./bun_spawn_ffi", "asyncsubprocess_unref")
 pub fn unref(from subprocess: AsyncSubprocessObject) -> Nil
 
 /// This method will tell Bun to wait for this process to exit after you already called `unref()`.
 /// Before shutting down, Bun will wait for all subprocesses to exit by default
-@external(javascript, "../bun_spawn_ffi", "asyncsubprocess_reref")
+@external(javascript, "./bun_spawn_ffi", "asyncsubprocess_reref")
 pub fn reref(from subprocess: AsyncSubprocessObject) -> Nil
 
 /// Kills a subprocess
