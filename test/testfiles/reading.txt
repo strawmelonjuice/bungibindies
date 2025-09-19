@@ -1,1 +1,0 @@
-Hello world! This file is for testing reading :)
